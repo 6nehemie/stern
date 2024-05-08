@@ -86,7 +86,12 @@ const SignInForm = () => {
               <FormItem>
                 {/* <FormLabel className="font-rajdhani">Email</FormLabel> */}
                 <FormControl>
-                  <Input placeholder="Email*" {...field} />
+                  <Input
+                    placeholder="Email*"
+                    type="email"
+                    className="lowercase"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

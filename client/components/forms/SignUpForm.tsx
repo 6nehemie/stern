@@ -140,11 +140,14 @@ const SignUpForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm lowercase">
-                    E-mail address *
-                  </FormLabel>
+                  <FormLabel className="text-sm">E-mail address *</FormLabel>
                   <FormControl>
-                    <Input placeholder="" {...field} />
+                    <Input
+                      placeholder=""
+                      type="email"
+                      className="lowercase"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
