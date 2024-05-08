@@ -16,7 +16,7 @@ const SignUp = () => {
         />
       </div>
 
-      <div className="sign-up-images-height px-8 xs:px-10 sm:px-[54px] lg:px-[76px] min-[1500px]:px-[90px] pb-[70px] overflow-hidden overflow-y-auto">
+      <div className="sign-up-images-height px-8 xs:px-10 sm:px-[54px] lg:px-[76px] min-[1500px]:px-[90px] overflow-hidden overflow-y-auto">
         <SignUpForm />
         {/* <div className="h-[2000px] bg-red-200"></div> */}
       </div>

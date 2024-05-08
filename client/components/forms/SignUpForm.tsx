@@ -60,10 +60,8 @@ const SignUpForm = () => {
     setCurrentStep(2);
   }
 
-  console.log('Current values:', form.getValues());
-
   return (
-    <div>
+    <div className="pb-[70px]">
       <div className="mt-12 space-y-10">
         <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-3xl min-[1460px]:text-4xl">
           Create your Stern Account.
@@ -142,7 +140,9 @@ const SignUpForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm">E-mail address *</FormLabel>
+                  <FormLabel className="text-sm lowercase">
+                    E-mail address *
+                  </FormLabel>
                   <FormControl>
                     <Input placeholder="" {...field} />
                   </FormControl>
