@@ -75,7 +75,7 @@ const SignInForm = () => {
       <Form {...formStep1}>
         <form
           onSubmit={formStep1.handleSubmit(checkEmail)}
-          className={cn('space-y-2', {
+          className={cn('space-y-6', {
             hidden: currentStep !== 1,
           })}
         >
@@ -86,7 +86,7 @@ const SignInForm = () => {
               <FormItem>
                 {/* <FormLabel className="font-rajdhani">Email</FormLabel> */}
                 <FormControl>
-                  <Input placeholder="Email" {...field} />
+                  <Input placeholder="Email*" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -107,40 +107,48 @@ const SignInForm = () => {
       <Form {...formStep2}>
         <form
           onSubmit={formStep2.handleSubmit(onSubmit)}
-          className={cn('space-y-2', {
+          className={cn('space-y-6', {
             hidden: currentStep !== 2,
           })}
         >
-          <div className="flex items-center justify-between text-sm py-2 px-6 border-2 border-gray-2 rounded-md h-[52px] w-full">
-            <span className="font-medium">{emailResult}</span>
-            <div
-              onClick={() => {
-                setCurrentStep(1);
-                setEmailResult(null);
-              }}
-              className="cursor-pointer hover:font-medium"
-            >
-              Edit
+          <div className="space-y-2">
+            <div className="flex items-center justify-between text-sm py-2 px-6 border-2 border-gray-2 rounded-md h-[52px] w-full">
+              <span className="font-medium">{emailResult}</span>
+              <div
+                onClick={() => {
+                  setCurrentStep(1);
+                  setEmailResult(null);
+                }}
+                className="cursor-pointer hover:font-medium"
+              >
+                Edit
+              </div>
+            </div>
+
+            <FormField
+              control={formStep2.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  {/* <FormLabel className="font-rajdhani">Email</FormLabel> */}
+                  <FormControl>
+                    <Input
+                      placeholder="Enter your password*"
+                      type="password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <div className="pt-2">
+              <p className="text-sm underline cursor-pointer">
+                Password forgotten ?
+              </p>
             </div>
           </div>
-
-          <FormField
-            control={formStep2.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                {/* <FormLabel className="font-rajdhani">Email</FormLabel> */}
-                <FormControl>
-                  <Input
-                    placeholder="Enter your password"
-                    type="password"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
 
           <Button type="submit" className="h-[52px] w-full font-light">
             <Loader2

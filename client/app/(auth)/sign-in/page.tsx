@@ -14,16 +14,17 @@ const SignIn = () => {
           height={2731}
           alt="wallpaper"
           className="h-full object-cover object-right-bottom"
+          priority
         />
       </div>
 
-      <div className="max-w-[645px] mx-auto w-full flex items-center justify-center h-full ">
-        <div className="max-w-[320px] w-full space-y-4">
+      <div className="max-w-[645px] mx-auto w-full flex items-center justify-center h-full p-side">
+        <div className="max-w-[360px] w-full space-y-4">
           <div className="mx-auto w-max mb-8">
             <Stern />
           </div>
 
-          <h1 className="text-xl font-medium mt-8">{signIn.message}</h1>
+          <h1 className="text-xl font-medium pb-4">{signIn.message}</h1>
 
           <SignInForm />
 

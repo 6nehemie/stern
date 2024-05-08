@@ -77,6 +77,14 @@
     @apply bg-background text-foreground;
   }
 
+  .p-side {
+    @apply px-6 lg:px-8 xl:px-10;
+  }
+
+  .btn-detail {
+    @apply hover:bg-neutral-200 transition-colors duration-200 rounded-sm;
+  }
+
   .auth-grid {
     display: grid;
     /* grid-template-columns: 1fr 1fr; */
@@ -86,5 +94,18 @@
     @media only screen and (max-width: 1024px) {
       grid-template-columns: 1fr;
     }
+  }
+
+  .sign-up-images-height {
+    height: calc(100vh - 80px);
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
