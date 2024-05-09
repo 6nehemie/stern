@@ -88,8 +88,7 @@
   .auth-grid {
     display: grid;
     /* grid-template-columns: 1fr 1fr; */
-    grid-template-columns: 1fr 645px;
-    grid-template-rows: 1fr min-content;
+    grid-template-columns: 1fr 40%;
 
     @media only screen and (max-width: 1024px) {
       grid-template-columns: 1fr;
