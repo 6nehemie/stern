@@ -66,6 +66,7 @@ const formSchema = z.object({
 const SetPasswordForm = () => {
   const [currentStep, setCurrentStep] = useState(3);
   const [passwordValue, setPasswordValue] = useState('');
+  const [hasStartedTyping, setHasStartedTyping] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -104,7 +105,10 @@ const SetPasswordForm = () => {
               name="password"
               render={({ field }) => (
                 <FormItem
-                  onChange={(e: any) => setPasswordValue(e.target.value)}
+                  onChange={(e: any) => {
+                    setPasswordValue(e.target.value);
+                    if (!hasStartedTyping) setHasStartedTyping(true);
+                  }}
                 >
                   <FormLabel className="text-sm">Password *</FormLabel>
                   <FormControl>
@@ -115,13 +119,17 @@ const SetPasswordForm = () => {
               )}
             />
 
-            <div className="text-[15px] space-y-4">
+            <div
+              className={cn('text-[15px] space-y-4', {
+                hidden: !hasStartedTyping,
+              })}
+            >
               <p className="">
-                Enter a strong password for your Porsche ID account. Your
-                password must contain
+                Enter a strong password for your Stern account. Your password
+                must contain
               </p>
 
-              <ul className="ml-4 space-y-3 list-disc">
+              <ul className={cn('ml-4 space-y-3 list-disc')}>
                 <li>
                   <span>at least 8 characters</span>
 
