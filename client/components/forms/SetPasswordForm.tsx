@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Check, Loader2, X } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
   password: z
@@ -64,7 +65,8 @@ const formSchema = z.object({
 });
 
 const SetPasswordForm = () => {
-  const [currentStep, setCurrentStep] = useState(3);
+  const router = useRouter();
+  const currentStep = 3;
   const [passwordValue, setPasswordValue] = useState('');
   const [hasStartedTyping, setHasStartedTyping] = useState(false);
 
@@ -79,7 +81,7 @@ const SetPasswordForm = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
-    // setCurrentStep(2);
+    router.push('/confirm/new_reg');
   }
 
   return (
@@ -119,11 +121,7 @@ const SetPasswordForm = () => {
               )}
             />
 
-            <div
-              className={cn('text-[15px] space-y-4', {
-                hidden: !hasStartedTyping,
-              })}
-            >
+            <div className={cn('text-[15px] space-y-4', {})}>
               <p className="">
                 Enter a strong password for your Stern account. Your password
                 must contain
@@ -133,66 +131,92 @@ const SetPasswordForm = () => {
                 <li>
                   <span>at least 8 characters</span>
 
-                  {passwordValue.length < 8 ? (
-                    <X
-                      className={cn('size-5 text-red-500 inline-block ml-2')}
-                      strokeWidth={1.6}
-                    />
-                  ) : (
-                    <Check
-                      className={cn('size-5 text-green-600 inline-block ml-2')}
-                      strokeWidth={1.8}
-                    />
-                  )}
+                  <div
+                    className={cn('inline-block ml-2', {
+                      hidden: !hasStartedTyping,
+                    })}
+                  >
+                    {passwordValue.length < 8 ? (
+                      <X
+                        className={cn('size-5 text-red-500 inline-block')}
+                        strokeWidth={1.6}
+                      />
+                    ) : (
+                      <Check
+                        className={cn('size-5 text-green-600 inline-block')}
+                        strokeWidth={1.8}
+                      />
+                    )}
+                  </div>
                 </li>
 
                 <li>
                   <span>numbers</span>
 
-                  {!/\d/.test(passwordValue) ? (
-                    <X
-                      className={cn('size-5 text-red-500 inline-block ml-2')}
-                      strokeWidth={1.6}
-                    />
-                  ) : (
-                    <Check
-                      className={cn('size-5 text-green-600 inline-block ml-2')}
-                      strokeWidth={1.8}
-                    />
-                  )}
+                  <div
+                    className={cn('inline-block ml-2', {
+                      hidden: !hasStartedTyping,
+                    })}
+                  >
+                    {!/\d/.test(passwordValue) ? (
+                      <X
+                        className={cn('size-5 text-red-500 inline-block')}
+                        strokeWidth={1.6}
+                      />
+                    ) : (
+                      <Check
+                        className={cn('size-5 text-green-600 inline-block')}
+                        strokeWidth={1.8}
+                      />
+                    )}
+                  </div>
                 </li>
 
                 <li>
                   <span>upper and lower-case letters</span>
-                  {!/[A-Z]/.test(passwordValue) ||
-                  !/[a-z]/.test(passwordValue) ? (
-                    <X
-                      className={cn('size-5 text-red-500 inline-block ml-2')}
-                      strokeWidth={1.6}
-                    />
-                  ) : (
-                    <Check
-                      className={cn('size-5 text-green-600 inline-block ml-2')}
-                      strokeWidth={1.8}
-                    />
-                  )}
+
+                  <div
+                    className={cn('inline-block ml-2', {
+                      hidden: !hasStartedTyping,
+                    })}
+                  >
+                    {!/[A-Z]/.test(passwordValue) ||
+                    !/[a-z]/.test(passwordValue) ? (
+                      <X
+                        className={cn('size-5 text-red-500 inline-block')}
+                        strokeWidth={1.6}
+                      />
+                    ) : (
+                      <Check
+                        className={cn('size-5 text-green-600 inline-block')}
+                        strokeWidth={1.8}
+                      />
+                    )}
+                  </div>
                 </li>
 
                 <li>
                   <span>and special characters.</span>
-                  {!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(
-                    passwordValue
-                  ) ? (
-                    <X
-                      className={cn('size-5 text-red-500 inline-block ml-2')}
-                      strokeWidth={1.6}
-                    />
-                  ) : (
-                    <Check
-                      className={cn('size-5 text-green-600 inline-block ml-2')}
-                      strokeWidth={1.8}
-                    />
-                  )}
+
+                  <div
+                    className={cn('inline-block ml-2', {
+                      hidden: !hasStartedTyping,
+                    })}
+                  >
+                    {!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(
+                      passwordValue
+                    ) ? (
+                      <X
+                        className={cn('size-5 text-red-500 inline-block')}
+                        strokeWidth={1.6}
+                      />
+                    ) : (
+                      <Check
+                        className={cn('size-5 text-green-600 inline-block')}
+                        strokeWidth={1.8}
+                      />
+                    )}
+                  </div>
                 </li>
               </ul>
             </div>
