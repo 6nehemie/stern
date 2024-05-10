@@ -49,7 +49,8 @@ const SignUpProgress = ({ currentStep }: { currentStep: number }) => {
             }
           )}
         >
-          <span className="text-xs">2</span>
+          {currentStep < 3 && <span className="text-xs">2</span>}
+          {currentStep !== 2 && <Check className="size-5" strokeWidth={2} />}
         </div>
 
         <span className="text-sm">Enter personal details</span>

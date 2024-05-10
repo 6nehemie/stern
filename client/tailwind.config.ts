@@ -23,6 +23,9 @@ const config = {
         rajdhani: ['Rajdhani', 'sans-serif'],
         exo: ['Exo', 'sans-serif'],
       },
+      backgroundImage: {
+        'footer-texture': "url('/img/footer-texture.png')",
+      },
       colors: {
         gray: {
           2: '#6B6D70',

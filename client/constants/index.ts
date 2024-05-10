@@ -17,3 +17,9 @@ export const signUp = {
     four: 'https://utfs.io/f/58a44203-71cd-4d29-b153-147b8b50f0b0-dzg6sk.png',
   },
 };
+
+export const newReg = {
+  message: 'Welcome to Stern! Your account has been created.',
+  wallpaper:
+    'https://utfs.io/f/8d5b77af-bc1b-441a-98b6-f4e5aa4bcd91-hrgee6.jpg',
+};
