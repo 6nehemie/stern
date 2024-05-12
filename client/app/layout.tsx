@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Exo } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/navigation/Navbar';
 
 const exo = Exo({ subsets: ['latin'] });
 
@@ -17,11 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={exo.className}>
-        <Navbar />
-
-        {children}
-      </body>
+      <body className={exo.className}>{children}</body>
     </html>
   );
 }

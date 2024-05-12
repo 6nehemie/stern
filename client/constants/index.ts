@@ -23,3 +23,19 @@ export const newReg = {
   wallpaper:
     'https://utfs.io/f/8d5b77af-bc1b-441a-98b6-f4e5aa4bcd91-hrgee6.jpg',
 };
+
+export const user = {
+  firstName: 'Naomi',
+  middleName: '',
+  lastName: 'Liu',
+  email: 'naomi.liu@test.com',
+};
+
+export const dashboard = {
+  noBooking: {
+    image: 'https://utfs.io/f/fd4dfdf6-6252-48e7-a8c3-cc66b12239e3-zdlv8k.png',
+    title: "Looks like you don't have any upcoming bookings yet.",
+    message:
+      'Whatever the occasion - be it a wedding, a weekend getaway, or a cross-country adventure - make it unforgettable with Stern. Book now and immerse yourself in the ultimate luxury experience.',
+  },
+};

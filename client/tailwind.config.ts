@@ -27,6 +27,9 @@ const config = {
         'footer-texture': "url('/img/footer-texture.png')",
       },
       colors: {
+        stern: {
+          primary: '#EBECEF',
+        },
         gray: {
           2: '#6B6D70',
         },

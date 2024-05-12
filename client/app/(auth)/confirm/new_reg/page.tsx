@@ -10,13 +10,13 @@ const NewReg = () => {
   const router = useRouter();
 
   //? Redirect to home page after 5 seconds
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      router.push('/home');
-    }, 5000);
+  //   useEffect(() => {
+  //     const timeout = setTimeout(() => {
+  //       router.push('/home');
+  //     }, 5000);
 
-    return () => clearTimeout(timeout);
-  }, [router]);
+  //     return () => clearTimeout(timeout);
+  //   }, [router]);
 
   return (
     <section className={cn('h-screen  relative xl:grid xl:grid-cols-2')}>
