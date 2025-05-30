@@ -34,7 +34,7 @@ const Navbar = () => {
         hidden: shouldNotRender,
         'bg-transparent text-white': shouldBeTransparent,
         'bg-white': !shouldBeTransparent,
-        'border-b border-neutral-200': shouldHaveBorder,
+        // 'border-b border-neutral-200': shouldHaveBorder,
         sticky: shouldBeSticky,
         fixed: !shouldBeSticky,
       })}
@@ -50,9 +50,9 @@ const Navbar = () => {
 
         <div>
           {/* <button className="flex items-center gap-2 btn-detail p-1">
-          <Menu className="size-5" strokeWidth={1.3} />
-          <span className="text-sm">Menu</span>
-        </button> */}
+            <Menu className="size-5" strokeWidth={1.3} />
+            <span className="text-sm">Menu</span>
+          </button> */}
         </div>
 
         <div className="flex justify-end">

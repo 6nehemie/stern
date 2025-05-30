@@ -1,8 +1,6 @@
+import { dashboard, user } from '@/constants';
 import Image from 'next/image';
-import { dashboard, newReg, signIn, signUp, user } from '@/constants';
-import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 
 const page = () => {
   return (
